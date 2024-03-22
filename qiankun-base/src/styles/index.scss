@@ -1,0 +1,87 @@
+//引入清除默认样式
+@import './reset.scss';
+@import './variable.scss';
+
+body{
+    font-size: 14px;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex_center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex1{
+    display: flex;
+    align-items: center;
+}
+
+.flex_wrap{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.pagination{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.btns {
+    i {
+        cursor: pointer;
+        font-weight: bold;
+        color: #333;
+    }
+    i:hover {
+        color: $base-theme-color;
+    }
+}
+
+// 对话框
+.el-dialog__header{
+    border-bottom: 1px solid rgba(187,187,187,1) !important;
+}
+
+// 分页
+.pagination{
+    margin: 20px 0;
+}
+
+// 弹窗
+.el-dialog__header{
+    margin-right: 0 !important;
+    span{
+        color: #333 !important;
+        font-weight: bold;
+    }
+}
+.el-dialog__headerbtn{
+    top: 0 !important;
+}
+
+// 表格
+.el-table__header .el-table__cell{
+    background: rgba(247, 247, 247, 1) !important; 
+    color: #606266 !important; 
+    padding: 8px 0 !important;
+}
+
+// 抽屉
+.el-drawer__header{
+    padding-bottom: 10px !important;
+    margin-bottom: 0px !important;
+    border-bottom: 1px solid #eee;
+    span{
+        color: #333 !important;
+        font-weight: bold;
+    }
+}
