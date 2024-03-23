@@ -22,7 +22,7 @@ let router = null
 let instance: any = null
 let history: any = null
 function render(props: any) {
-    const { container } = props
+    // const { container } = props
     history = createWebHistory(qiankunWindow.__POWERED_BY_QIANKUN__ ? '/vue-app' : '/')
     router = createRouter({
         history,
@@ -35,7 +35,7 @@ function render(props: any) {
     instance.use(router)
     instance.use(createPinia())
     instance.use(globalComponentsPlugin)
-    instance.mount(container ? container.querySelector('#app_demo') : document.getElementById('app_demo'))
+    instance.mount(props?.container ? props.container.querySelector('#app_demo') : document.getElementById('app_demo'))
     if (qiankunWindow.__POWERED_BY_QIANKUN__) {
         console.log('我正在作为子应用运行')
     }
