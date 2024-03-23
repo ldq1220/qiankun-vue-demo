@@ -11,12 +11,26 @@
     </el-dialog>
     <el-button type="primary" size="default" @click="visiabled = true">弹窗</el-button>
 
-    <iframe src="https://element-plus.gitee.io/zh-CN/component/dialog.html" style="width: 100%; height: 200px"></iframe>
+    <h1>{{ accessToken }}</h1>
+    <!-- <iframe src="https://element-plus.gitee.io/zh-CN/component/dialog.html" style="width: 100%; height: 200px"></iframe> -->
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
+import axios from 'axios'
+
 const visiabled = ref(false)
+const accessToken = ref()
+
+onMounted(() => {
+    accessToken.value = localStorage.getItem('accessToken')
+    getData()
+})
+
+const getData = async () => {
+    const res = await axios.get('https://picsum.photos/200/300')
+    console.log('子应用axios请求=======', res)
+}
 </script>
 
 <style scoped lang="scss">

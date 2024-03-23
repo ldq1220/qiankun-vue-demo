@@ -44,7 +44,7 @@ function render(props: any) {
 // some code
 renderWithQiankun({
     mount(props: any) {
-        console.log('viteapp mount')
+        console.log('viteapp mount', props)
         render(props)
     },
     bootstrap() {
